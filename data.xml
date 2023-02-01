@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sim-type>Simulation Type</sim-type>
+    <title>Simulation Titpe</title>
+    <auth>Author</auth>
+    <desc>Description</desc>
+    <wrid-width>Width</grid-width>
+    <grid-height>Height</grid-height>
+    <init-cells>
+        <cell>
+            <x>X-Coordinate</x>
+            <y>Y--Coordinate</y>
+            <state>Cell state</state>
+        </cell>
+    </init-cells>
+    <!--Fire sim-->
+    <prob-fire>Probability of Catching on Fire</prob-fire>
+    <prob-tree-grow>Probability of Tree Growing</prob-tree-grow>
+    <!--Segragation model-->
+    <seg-similarity>Segration similarity parameter</seg-similarity>
+    <!--Wa-tor world simulation-->
+    <breed-time>Time betweem breeding</breed-time>
+    <starve-time>Time before starving</starve-time>
+</config>
