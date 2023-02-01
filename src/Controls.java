@@ -24,17 +24,17 @@ public class Controls {
     private enum Params {
         TITLE,
         AUTH,
-        DESCRIPTION,
-        WIDTH,
-        HEIGHT,
-        FIRE_PROB,
-        TREE_GROW_PROB,
+        DESC,
+        GRID_WIDTH,
+        GRID_HEIGHT,
+        PROB_FIRE,
+        PROB_TREE_GROW,
         SEG_SIMILARITY,
         BREED_TIME,
         STARVE_TIME
     }
 
-    public static final Params[] fieldTypes = new Params[]{Params.TITLE, Params.AUTH, Params.DESCRIPTION, Params.WIDTH, Params.HEIGHT, Params.FIRE_PROB, Params.TREE_GROW_PROB, Params.SEG_SIMILARITY, Params.BREED_TIME, Params.STARVE_TIME};
+    public static final Params[] fieldTypes = new Params[]{Params.TITLE, Params.AUTH, Params.DESC, Params.GRID_WIDTH, Params.GRID_HEIGHT, Params.PROB_FIRE, Params.PROB_TREE_GROW, Params.SEG_SIMILARITY, Params.BREED_TIME, Params.STARVE_TIME};
     private final TextField [] fields = new TextField[fieldTypes.length];
 
     public Controls() {
@@ -91,7 +91,7 @@ public class Controls {
             for (int i = 1; i < fields.length; i++) {
                 parameters.insertKV(i, fieldTypes[i].name().toLowerCase(), fields[i].getText());
             }
-            x.printXML(file.getPath(), parameters);
+            x.formatXML(file.getPath(), parameters, Main.cells);
         }
     }
 

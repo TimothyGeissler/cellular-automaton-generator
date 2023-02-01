@@ -31,6 +31,14 @@ public class Cell {
         this.isLive = false;
     }
 
+    public int getRow() {
+        return (int) (cell.getX()/CELL_SIZE);
+    }
+
+    public int getCol() {
+        return (int) (cell.getY()/CELL_SIZE);
+    }
+
     public boolean isLive() {
         return isLive;
     }
