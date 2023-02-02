@@ -4,7 +4,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class Cell {
-    private boolean isLive;
+    private int isLive;
     private Rectangle cell;
     private static final Color CELL_VISIBLE = Color.BLACK;
     private static final Color CELL_INVISIBLE = Color.TRANSPARENT;
@@ -28,7 +28,7 @@ public class Cell {
         cell.setY(y);
         cell.setWidth(CELL_SIZE);
         cell.setHeight(CELL_SIZE);
-        this.isLive = false;
+        this.isLive = 0;
     }
 
     public int getRow() {
@@ -39,7 +39,7 @@ public class Cell {
         return (int) (cell.getY()/CELL_SIZE);
     }
 
-    public boolean isLive() {
+    public int isLive() {
         return isLive;
     }
 
@@ -48,11 +48,15 @@ public class Cell {
     }
 
     public void swapLive() {
-        setLive(!this.isLive);
+        switch (this.isLive) {
+            case 0 -> setLive(1);
+            case 1 -> setLive(0);
+        }
+
     }
-    public void setLive(boolean live) {
+    public void setLive(int live) {
         isLive = live;
-        if (live) {
+        if (live == 1) {
             cell.setFill(CELL_VISIBLE);
         } else {
             cell.setFill(CELL_INVISIBLE);
