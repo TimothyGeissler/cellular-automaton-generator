@@ -86,10 +86,10 @@ public class Controls {
         FileChooser picker = new FileChooser();
         File file = picker.showSaveDialog(stage);
         if (file != null) {
-            KeyValueList parameters = new KeyValueList(fields.length);
+            KeyValueList parameters = new KeyValueList(fields.length + 1);
             parameters.insertKV(0, "sim-type", simType.getValue());
-            for (int i = 1; i < fields.length; i++) {
-                parameters.insertKV(i, fieldTypes[i].name().toLowerCase(), fields[i].getText());
+            for (int i = 0; i < fields.length; i++) {
+                parameters.insertKV(i+1, fieldTypes[i].name().toLowerCase(), fields[i].getText());
             }
             x.formatXML(file.getPath(), parameters, Main.cells);
         }
