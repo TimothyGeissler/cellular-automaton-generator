@@ -50,7 +50,7 @@ public class XMLGenerator {
             rootElement.appendChild(e);
         }
         // Output cells
-        Element cellsElement = doc.createElement("cells");
+        Element cellsElement = doc.createElement("init-cells");
         rootElement.appendChild(cellsElement);
 
         for (Cell c: cells) {
